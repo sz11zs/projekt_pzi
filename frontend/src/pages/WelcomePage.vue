@@ -4,7 +4,7 @@
       <!-- Slika + naslov gore -->
       <div class="top">
         <v-img :src="pocetnaSlika" max-width="520" class="mx-auto" contain />
-        <div class="brand-title mt-2">Piljarnica NOVA</div>
+        <div class="brand-title mt-2">Piljarnica kod Šime</div>
       </div>
 
       <!-- Zeleni panel -->

@@ -1,7 +1,7 @@
 <template>
   <GreenImagePanelLayout title="O aplikaciji" :image-src="pocetnaSlika">
     <p>
-      Piljarnica NOVA je web aplikacija koja omogućuje kupcima da, u nedostatku
+      Piljarnica kod Šime je web aplikacija koja omogućuje kupcima da, u nedostatku
       vremena za fizički posjet trgovini, kupnju obave brzo i jednostavno iz doma
       ili ureda.
     </p>

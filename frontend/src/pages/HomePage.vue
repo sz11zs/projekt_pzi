@@ -34,7 +34,7 @@
     <v-app-bar>
       <v-app-bar-nav-icon color="#455A1F" @click="drawer = !drawer" />
       <v-app-bar-title>
-        <span class="navbar-title">Piljarnica NOVA</span>
+        <span class="navbar-title">Piljarnica kod Šime</span>
       </v-app-bar-title>
     </v-app-bar>
 
@@ -43,7 +43,7 @@
     @click="$router.push('/trgovina')"/>
     </v-container>
 
-    <div class="piljarnica-title mt-n1">Piljarnica NOVA</div>
+    <div class="piljarnica-title mt-n1">Piljarnica kod Šime</div>
   </div>
 </template>
 
