@@ -25,7 +25,7 @@ declare module 'vue-router/auto-routes' {
     '/FruitPage': RouteRecordInfo<'/FruitPage', '/FruitPage', Record<never, never>, Record<never, never>>,
     '/HomePage': RouteRecordInfo<'/HomePage', '/HomePage', Record<never, never>, Record<never, never>>,
     '/MadeProductPage': RouteRecordInfo<'/MadeProductPage', '/MadeProductPage', Record<never, never>, Record<never, never>>,
-    '/RegisterPAge': RouteRecordInfo<'/RegisterPAge', '/RegisterPAge', Record<never, never>, Record<never, never>>,
+    '/RegisterPage': RouteRecordInfo<'/RegisterPage', '/RegisterPage', Record<never, never>, Record<never, never>>,
     '/ShopPage': RouteRecordInfo<'/ShopPage', '/ShopPage', Record<never, never>, Record<never, never>>,
     '/VegetablePage': RouteRecordInfo<'/VegetablePage', '/VegetablePage', Record<never, never>, Record<never, never>>,
     '/WelcomePage': RouteRecordInfo<'/WelcomePage', '/WelcomePage', Record<never, never>, Record<never, never>>,
@@ -70,8 +70,8 @@ declare module 'vue-router/auto-routes' {
       routes: '/MadeProductPage'
       views: never
     }
-    'src/pages/RegisterPAge.vue': {
-      routes: '/RegisterPAge'
+    'src/pages/RegisterPage.vue': {
+      routes: '/RegisterPage'
       views: never
     }
     'src/pages/ShopPage.vue': {
