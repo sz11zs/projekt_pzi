@@ -10,8 +10,7 @@ Web aplikacija za naručivanje voća, povrća i domaćih proizvoda iz lokalnih t
 
 Kratki video pokazuje kako aplikacija radi: od odabira proizvoda i košarice do narudžbe i administratorskog dijela.
 
-<!-- Redak ispod zamijeniti videom: na GitHubu urediti README i povući video na mjesto oznake -->
-OVDJE_DODATI_VIDEO
+(https://github.com/user-attachments/assets/f679a8c1-0402-411b-b9ce-95197ef7e9e6)
 
 ## ✨ Mogućnosti
 
