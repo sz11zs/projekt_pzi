@@ -74,28 +74,7 @@
                   </select>
                   <input v-model.number="editProduct.quantity" type="number" step="0.001" placeholder="Nova količina (kg)" :disabled="!editProduct.id" />
                   <input v-model.number="editProduct.price"type="number"step="0.01"placeholder="Nova cijena (€)":disabled="!editProduct.id" />
-                  <button class="db-btn" style="max-width: 260px" @click="updateProductQty">SPREMI PROMJENE</button>
-                </div>
-              </div>
-
-               <!--promjena cjene-->
-              <div v-else-if="active === 'add-price'">
-                <div style="display: grid; gap: 12px; max-width: 480px">
-                  <select
-                    v-model.number="selectedProductId"
-                    @change="
-                      selectedProductId && pickProductForEdit(selectedProductId)
-                    "
-                  >
-                    <option :value="null">Odaberi proizvod</option>
-                    <option v-for="p in products" :key="p.id" :value="p.id">
-                      {{ p.name }}
-                    </option>
-                  </select>
-
-                  <input v-model.number="editProduct.price"type="number"step="0.01"placeholder="Nova cijena (€)":disabled="!editProduct.id" />
-
-                  <button class="db-btn" style="max-width: 260px" @click="updateChangePrice">SPREMI PROMJENE</button>
+                  <button class="db-btn" style="max-width: 260px" @click="updateProductQtyPrice">SPREMI PROMJENE</button>
                 </div>
               </div>
 

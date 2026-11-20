@@ -12,7 +12,6 @@
         <v-btn rounded="pill" class="auth-btn" @click="$router.push('/registracija')">
           REGISTRACIJA
         </v-btn>
-        <CartCard v-model="cartDialog" />
 
       </v-card>
     </v-dialog>

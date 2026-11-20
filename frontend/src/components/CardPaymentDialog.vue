@@ -41,7 +41,7 @@
   function onBuy() {
     error.value = "";
 
-    const card = cardNumber.value.replaceAll(" ", "");
+    const card = cardNumber.value.replace(/\s/g, "");
     const expVal = exp.value.replace("/", "");
 
     if (card.length !== 16 || isNaN(Number(card))) {

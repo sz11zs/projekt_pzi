@@ -82,7 +82,7 @@
         <v-btn variant="text" icon @click="cartDialog = true">
           <v-icon>mdi-cart</v-icon>
         </v-btn>
-        <ProductCardDialog v-model="searchDialog" :product="searchSelected" />
+        <ProductCardDialog v-model="searchDialog" :product="searchSelected" @add="onSearchAdd" />
       </div>
     </header>
 
@@ -103,7 +103,7 @@
   import { ref } from "vue";
   import { useCartStore } from "@/stores/cart";
   import { onMounted } from "vue";
-  import { ProductGridItem } from "@/components/ProductGrid.vue";
+  import type { ProductGridItem } from "@/components/ProductGrid.vue";
   import CartDialog from "@/components/CartCard.vue";
   import ProductCardDialog from "@/components/ProductCardDialog.vue";
   import PaymentDialog from "@/components/PaymentDialog.vue";
@@ -241,6 +241,16 @@
     addressDialog.value = true;
   }
 
+  // proizvod pronađen tražilicom dodaje se u košaricu kao i na stranicama kategorija
+  function onSearchAdd(payload: { product: ProductGridItem; amountKg: number }) {
+    cart.addItem({
+      productId: payload.product.id,
+      name: payload.product.name,
+      price: Number(payload.product.price ?? 0),
+      qtyKg: payload.amountKg,
+    });
+  }
+
   async function doSearch() {
     const q = searchText.value.trim();
     if (!q) return;
@@ -259,6 +269,7 @@
       name: p.name ?? "",
       description: p.description ?? "",
       image: p.image ?? "",
+      unit: p.unit ?? "kg",
       price: Number(p.price ?? 0),
       quantity: Number(p.quantity ?? 0),
       porijeklo: p.porijeklo ?? null,

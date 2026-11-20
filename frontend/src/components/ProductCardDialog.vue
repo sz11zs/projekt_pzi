@@ -79,21 +79,9 @@
 
 <script setup lang="ts">
   import { computed, ref } from "vue";
-import CartCard from "./CartCard.vue";
+  import type { ProductGridItem } from "./ProductGrid.vue";
 
   const amount = ref<number | string | null>(null);
-
-  type ProductGridItem = {
-    id: number | string;
-    name: string;
-    description: string;
-    image: string;
-    price?: number;
-    quantity?: number;
-    porijeklo?: string | null;
-    klasa?: string | null;
-    unit?: string | null; // "kg" ili "kom"
-  };
 
   const props = defineProps<{
     modelValue: boolean;
@@ -132,7 +120,7 @@ import CartCard from "./CartCard.vue";
     amount.value = null;
   }
 
-  function formatPrice(p?: number) {
+  function formatPrice(p?: number | null) {
     const n = Number(p ?? 0);
     return n.toFixed(2).replace(".", ",");
   }
