@@ -6,13 +6,12 @@ Web aplikacija za naručivanje voća, povrća i domaćih proizvoda iz lokalnih t
 
 🎨 **Figma prototip:** [otvori prototip u Figmi](https://www.figma.com/proto/5yd4YceS1B5pVoKjeogiRq/PILJARNICA?node-id=0-1)
 
-## 📸 Snimke zaslona
+## 🎬 Video prikaz
 
-| Početna | Trgovina | Košarica | Admin dashboard |
-|---|---|---|---|
-| ![Početna](docs/screenshots/pocetna.png) | ![Trgovina](docs/screenshots/trgovina.png) | ![Košarica](docs/screenshots/kosarica.png) | ![Dashboard](docs/screenshots/dashboard.png) |
+Kratki video pokazuje kako aplikacija radi: od odabira proizvoda i košarice do narudžbe i administratorskog dijela.
 
-<!-- Snimke spremiti u docs/screenshots/ pod gornjim imenima -->
+<!-- Redak ispod zamijeniti videom: na GitHubu urediti README i povući video na mjesto oznake -->
+OVDJE_DODATI_VIDEO
 
 ## ✨ Mogućnosti
 
@@ -104,9 +103,11 @@ A web app for ordering fruit, vegetables and homemade products from local shops.
 
 🎨 **Figma prototype:** [open the prototype in Figma](https://www.figma.com/proto/5yd4YceS1B5pVoKjeogiRq/PILJARNICA?node-id=0-1)
 
-### 📸 Screenshots
+### 🎬 Video demo
 
-See the [screenshot table above](#-snimke-zaslona) (images in `docs/screenshots/`).
+A short video showing how the app works: browsing products, the cart, placing an order and the admin dashboard.
+
+▶️ See the [video in the Croatian section above](#-video-prikaz).
 
 ### ✨ Features
 
