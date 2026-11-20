@@ -12,11 +12,26 @@ class AuthController extends Controller
 {
     public function register(Request $request):JsonResponse
     {
+       $data = $request->validate([
+        'name' => 'required|string|max:100|unique:users,name',
+        'email' => 'required|email|max:100|unique:users,email',
+        'password' => 'required|string|min:8',
+       ], [
+        'name.required' => 'Upišite ime.',
+        'name.unique' => 'Korisnik s tim imenom već postoji.',
+        'email.required' => 'Upišite e-mail adresu.',
+        'email.email' => 'E-mail adresa nije ispravna.',
+        'email.unique' => 'Korisnik s tom e-mail adresom već postoji.',
+        'password.required' => 'Upišite lozinku.',
+        'password.min' => 'Lozinka mora imati najmanje 8 znakova.',
+       ]);
+
+       // uloga se postavlja isključivo na serveru: novi korisnik je uvijek kupac
        $user= User::create([
-        'name'=>$request->name,
-        'email'=>$request->email,
-        'password'=> Hash::make($request->password),
-        'role_id' => $request->role_id,
+        'name'=>$data['name'],
+        'email'=>$data['email'],
+        'password'=> Hash::make($data['password']),
+        'role_id' => 2,
        ]);
 
        $token = $user->createToken('token')->plainTextToken;

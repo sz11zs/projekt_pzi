@@ -59,7 +59,7 @@
 
     const payload = isLogin.value
       ? { name: name.value, password: password.value } // Login šalje samo ime i pass
-      : { name: name.value, email: email.value, password: password.value, role_id: 2 }; // Register šalje sve
+      : { name: name.value, email: email.value, password: password.value }; // ulogu određuje server
 
     const res = await fetch(url, {
       method: "POST",
@@ -70,7 +70,8 @@
     if (!res.ok) {
       const err = await res.json().catch(() => ({}));
       console.error("AUTH ERROR:", err);
-      alert(isLogin.value ? "Prijava neuspješna!" : "Registracija neuspješna!");
+      const firstError = err?.errors ? Object.values(err.errors).flat()[0] : null;
+      alert(firstError || (isLogin.value ? "Prijava neuspješna!" : "Registracija neuspješna!"));
       return;
     }
 
