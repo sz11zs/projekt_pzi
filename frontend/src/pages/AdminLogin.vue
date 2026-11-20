@@ -61,6 +61,7 @@
 </template>
 
 <script setup lang="ts">
+  import { API_URL } from "@/api";
   import { ref } from "vue";
   import { useRouter } from "vue-router";
 
@@ -78,7 +79,7 @@
     errorMsg.value = "";
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/login", {
+      const res = await fetch(`${API_URL}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: name.value, password: password.value }),

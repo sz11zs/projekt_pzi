@@ -142,6 +142,7 @@
 </template>
 
 <script setup lang="ts">
+  import { API_URL } from "@/api";
 
 import { computed, ref, reactive } from "vue";
 import { useRouter } from "vue-router";
@@ -173,7 +174,7 @@ import { onMounted } from "vue";
   const router = useRouter();
   const active = ref<ActiveView | null>(null);
 
-  const API = "http://127.0.0.1:8000/api";
+  const API = API_URL;
 
   const user = computed(() => {
     try {

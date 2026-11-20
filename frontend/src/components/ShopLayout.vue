@@ -99,6 +99,7 @@
 </template>
 
 <script setup lang="ts">
+  import { API_URL } from "@/api";
 
   import { ref } from "vue";
   import { useCartStore } from "@/stores/cart";
@@ -145,7 +146,7 @@
     if (token) {
       try {
         // Obavještavamo backend da obriše token
-        await fetch("http://127.0.0.1:8000/api/logout", {
+        await fetch(`${API_URL}/logout`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -189,7 +190,7 @@
         })),
       };
 
-      const res = await fetch("http://127.0.0.1:8000/api/checkout", {
+      const res = await fetch(`${API_URL}/checkout`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -256,7 +257,7 @@
     if (!q) return;
 
     const res = await fetch(
-      `http://localhost:8000/api/products?q=${encodeURIComponent(q)}`,
+      `${API_URL}/products?q=${encodeURIComponent(q)}`,
     );
     const data = await res.json();
 

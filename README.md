@@ -88,8 +88,11 @@ Seeder se može pokrenuti ponovno (`php artisan db:seed`) bez dupliciranja podat
 ```bash
 cd frontend
 npm install
+cp .env.example .env          # Windows: copy .env.example .env
 npm run dev                   # http://localhost:3000
 ```
+
+Adresa backenda postavlja se u `frontend/.env` varijablom `VITE_API_URL` (zadano `http://127.0.0.1:8000/api`).
 
 Administratorska prijava nalazi se na `/adminlogin`.
 
@@ -143,7 +146,10 @@ php artisan serve             # API at http://127.0.0.1:8000
 ```bash
 cd frontend
 npm install
+cp .env.example .env          # Windows: copy .env.example .env
 npm run dev                   # http://localhost:3000
 ```
+
+The backend address is set with `VITE_API_URL` in `frontend/.env` (default `http://127.0.0.1:8000/api`).
 
 The admin login is at `/adminlogin`.

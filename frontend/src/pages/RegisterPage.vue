@@ -42,6 +42,7 @@
 </template>
 
 <script setup lang="ts">
+  import { API_URL } from "@/api";
   import { ref } from 'vue'
   import GreenImagePanelLayout from '@/components/GreenImagePanelLayout.vue'
   import pocetnaSlika from '@/assets/pocetnaSlika.png'
@@ -54,8 +55,8 @@
   async function handleSubmit () {
     // Određujemo URL i body ovisno o stanju isLogin
     const url = isLogin.value
-      ? "http://127.0.0.1:8000/api/login"
-      : "http://127.0.0.1:8000/api/register";
+      ? `${API_URL}/login`
+      : `${API_URL}/register`;
 
     const payload = isLogin.value
       ? { name: name.value, password: password.value } // Login šalje samo ime i pass

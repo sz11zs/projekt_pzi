@@ -17,6 +17,7 @@
 </template>
 
 <script setup lang="ts">
+  import { API_URL } from "@/api";
   import { onMounted, ref } from "vue"
   import { useCartStore } from "@/stores/cart"
   import ProductGrid, { type ProductGridItem } from "@/components/ProductGrid.vue"
@@ -42,7 +43,7 @@
   const products = ref<ProductGridItem[]>([])
 
   async function load() {
-    const res = await fetch('http://127.0.0.1:8000/api/products?category_id=1')
+    const res = await fetch(`${API_URL}/products?category_id=1`)
     const data: ApiProduct[] = await res.json()
 
     products.value = data.map(p => ({
