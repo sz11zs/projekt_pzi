@@ -6,21 +6,18 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
-   public function up(): void
-{
-    Schema::table('products', function (Blueprint $table) {
-        $table->dropColumn('image_url');
-    });
-}
+    // Stari stupac 'image_url' postoji samo u ranijim verzijama baze.
+    public function up(): void
+    {
+        if (Schema::hasColumn('products', 'image_url')) {
+            Schema::table('products', function (Blueprint $table) {
+                $table->dropColumn('image_url');
+            });
+        }
+    }
 
-public function down(): void
-{
-    Schema::table('products', function (Blueprint $table) {
-        $table->string('image_url', 255)->nullable();
-    });
-}
-
+    public function down(): void
+    {
+        // namjerno prazno: stupac 'image_url' se više ne koristi
+    }
 };

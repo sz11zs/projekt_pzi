@@ -1,18 +1,28 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration {
+    // Količine u kg (npr. 0.5) zato decimalni zapis umjesto cijelog broja.
     public function up(): void
     {
-        DB::statement("ALTER TABLE products MODIFY quantity DECIMAL(10,3) NOT NULL");
-        DB::statement("ALTER TABLE order_items MODIFY quantity DECIMAL(10,3) NOT NULL");
+        Schema::table('products', function (Blueprint $table) {
+            $table->decimal('quantity', 10, 3)->change();
+        });
+        Schema::table('order_items', function (Blueprint $table) {
+            $table->decimal('quantity', 10, 3)->change();
+        });
     }
 
     public function down(): void
     {
-        DB::statement("ALTER TABLE products MODIFY quantity INT NOT NULL");
-        DB::statement("ALTER TABLE order_items MODIFY quantity INT NOT NULL");
+        Schema::table('products', function (Blueprint $table) {
+            $table->integer('quantity')->change();
+        });
+        Schema::table('order_items', function (Blueprint $table) {
+            $table->integer('quantity')->change();
+        });
     }
 };
