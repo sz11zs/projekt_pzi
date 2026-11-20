@@ -178,7 +178,8 @@
         return;
       }
 
-      const payment_method_id = chosenMethod.value === "card" ? 1 : 2;
+      // ID-jevi iz tablice payment_methods: 1 = pouzećem, 2 = kartica
+      const payment_method_id = chosenMethod.value === "card" ? 2 : 1;
 
       const body = {
         payment_method_id,

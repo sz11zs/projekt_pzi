@@ -26,11 +26,13 @@ class DatabaseSeeder extends Seeder
         $password = env('SEED_SUPERADMIN_PASSWORD');
 
         if ($name && $email && $password) {
-            User::updateOrCreate(
-                ['email' => $email],
-                ['name' => $name, 'password' => Hash::make($password), 'role_id' => 4],
-            );
-            $this->command?->info("Superadmin '{$name}' je spreman.");
+            // samo dodaje; postojećem korisniku nikad ne mijenja lozinku ni ulogu
+            if (User::where('email', $email)->orWhere('name', $name)->exists()) {
+                $this->command?->warn("Korisnik '{$name}' / {$email} već postoji, ne mijenjam ga.");
+            } else {
+                User::create(['name' => $name, 'email' => $email, 'password' => Hash::make($password), 'role_id' => 4]);
+                $this->command?->info("Superadmin '{$name}' je stvoren.");
+            }
         } else {
             $this->command?->warn('Superadmin nije stvoren: postavite SEED_SUPERADMIN_* u .env.');
         }

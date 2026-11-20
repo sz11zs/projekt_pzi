@@ -81,7 +81,7 @@ php artisan migrate --seed    # tablice + uloge, kategorije, načini plaćanja (
 php artisan serve             # API radi na http://127.0.0.1:8000
 ```
 
-Seeder se može pokrenuti ponovno (`php artisan db:seed`) bez dupliciranja podataka.
+Seeder samo dodaje retke koji nedostaju i nikad ne mijenja postojeće, pa se `php artisan db:seed` može sigurno pokrenuti i na bazi s podacima. Načini plaćanja: 1 = pouzećem, 2 = kartica.
 
 ### 2. Frontend
 
